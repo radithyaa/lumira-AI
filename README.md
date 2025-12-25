@@ -7,8 +7,8 @@ This project was created with [Better-T-Stack](https://github.com/AmanVarshney01
 - **TypeScript** - For type safety and improved developer experience
 - **React Native** - Build mobile apps using React
 - **Expo** - Tools for React Native development
-- **TailwindCSS** - Utility-first CSS for rapid UI development
-- **shadcn/ui** - Reusable UI components
+- **Uniwind** - Utility-first CSS for native rapid UI development
+- **ReusableRN/ui** - Reusable UI components
 - **Hono** - Lightweight, performant server framework
 - **Bun** - Runtime environment
 - **Drizzle** - TypeScript-first ORM

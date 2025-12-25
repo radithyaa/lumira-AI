@@ -1,4 +1,4 @@
-import { expo } from '@better-auth/expo';
+import { expo } from "@better-auth/expo";
 import { db } from "@lumira/db";
 import * as schema from "@lumira/db/schema/auth";
 import { betterAuth } from "better-auth";
@@ -7,10 +7,13 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 export const auth = betterAuth({
   database: drizzleAdapter(db, {
     provider: "pg",
-
-    schema: schema,
+    schema,
   }),
-  trustedOrigins: [process.env.CORS_ORIGIN || "", "mybettertapp://", "exp://"],
+  trustedOrigins: [
+    process.env.CORS_ORIGIN || "http://localhost:3001",
+    "lumira://",
+    "exp://",
+  ],
   emailAndPassword: {
     enabled: true,
   },
@@ -21,5 +24,5 @@ export const auth = betterAuth({
       httpOnly: true,
     },
   },
-  plugins: [expo()]
+  plugins: [expo()],
 });

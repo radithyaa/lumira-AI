@@ -26,18 +26,20 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
+          headerShown: false, // Ensure no header from this specific screen
           title: "Home",
           tabBarIcon: ({ color, size }: { color: string; size: number }) => (
-            <Ionicons name="home" size={size} color={color} />
+            <Ionicons color={color} name="home" size={size} />
           ),
         }}
       />
       <Tabs.Screen
         name="two"
         options={{
+          headerShown: false, // Ensure no header from this specific screen
           title: "Explore",
           tabBarIcon: ({ color, size }: { color: string; size: number }) => (
-            <Ionicons name="compass" size={size} color={color} />
+            <Ionicons color={color} name="compass" size={size} />
           ),
         }}
       />

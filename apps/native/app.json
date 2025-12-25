@@ -8,10 +8,25 @@
     },
     "name": "lumira",
     "slug": "lumira",
-    "plugins": ["expo-font"],
+    "plugins": [
+      [
+        "expo-dev-client",
+        {
+          "launchMode": "most-recent"
+        }
+      ]
+    ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "android": {
+      "package": "com.anonymous.lumira"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2d9a2740-2cc2-42c5-83e3-463c113e6816"
+      }
     }
   }
 }
