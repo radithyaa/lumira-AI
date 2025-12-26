@@ -1,0 +1,254 @@
+{
+  "sections": [
+    {
+      "id": 1,
+      "title": "Each question",
+      "titleHighlight": " is a small mirror",
+      "quote": "\"Life is like riding a bicycle. To keep your balance, you must keep moving.\"\n-Albert Einstein",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/35e5358e732598169ae1dcaabf6d7e7b9620c66a?width=380"
+    },
+    {
+      "id": 2,
+      "title": "Let's find out",
+      "titleHighlight": " who you are!",
+      "quote": "\"Somewhere, something incredible is waiting to be known.\"\n-Carl Sagan",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/7e312d83dd793506d3862b8a4c3637e850f06d1a?width=380"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "text": "I feel energized after interacting with many people.",
+      "dimension": "EI",
+      "scoring": { "1": -2, "2": -1, "3": 0, "4": 1, "5": 2 }
+    },
+    {
+      "id": 2,
+      "text": "I prefer spending time alone to recharge my energy.",
+      "dimension": "EI",
+      "scoring": { "1": 2, "2": 1, "3": 0, "4": -1, "5": -2 }
+    },
+    {
+      "id": 3,
+      "text": "I focus more on real facts and specific details than on abstract ideas or possibilities.",
+      "dimension": "SN",
+      "scoring": { "1": -2, "2": -1, "3": 0, "4": 1, "5": 2 }
+    },
+    {
+      "id": 4,
+      "text": "I enjoy thinking about big ideas and seeing the big picture rather than small details.",
+      "dimension": "SN",
+      "scoring": { "1": 2, "2": 1, "3": 0, "4": -1, "5": -2 }
+    },
+    {
+      "id": 5,
+      "text": "When making decisions, I rely on logic and objectivity.",
+      "dimension": "TF",
+      "scoring": { "1": -2, "2": -1, "3": 0, "4": 1, "5": 2 }
+    },
+    {
+      "id": 6,
+      "text": "I consider personal values and emotions when making decisions.",
+      "dimension": "TF",
+      "scoring": { "1": 2, "2": 1, "3": 0, "4": -1, "5": -2 }
+    },
+    {
+      "id": 7,
+      "text": "I like to plan things well in advance and stick to the plan.",
+      "dimension": "JP",
+      "scoring": { "1": -2, "2": -1, "3": 0, "4": 1, "5": 2 }
+    },
+    {
+      "id": 8,
+      "text": "I prefer flexibility and adapting to situations as they unfold.",
+      "dimension": "JP",
+      "scoring": { "1": 2, "2": 1, "3": 0, "4": -1, "5": -2 }
+    },
+    {
+      "id": 9,
+      "text": "I enjoy being in the middle of crowds and social activities.",
+      "dimension": "EI",
+      "scoring": { "1": -2, "2": -1, "3": 0, "4": 1, "5": 2 }
+    },
+    {
+      "id": 10,
+      "text": "I often trust my gut feelings over things that can be directly observed.",
+      "dimension": "SN",
+      "scoring": { "1": 2, "2": 1, "3": 0, "4": -1, "5": -2 }
+    },
+    {
+      "id": 11,
+      "text": "I feel uneasy when things are not neat or well-organized",
+      "dimension": "JP",
+      "scoring": { "1": -2, "2": -1, "3": 0, "4": 1, "5": 2 }
+    },
+    {
+      "id": 12,
+      "text": "I think it's important to maintain harmony and avoid conflict in relationships.",
+      "dimension": "TF",
+      "scoring": { "1": 2, "2": 1, "3": 0, "4": -1, "5": -2 }
+    }
+  ],
+  "personalityTypes": {
+    "INTJ": {
+      "title": "Architect",
+      "code": "INTJ-A",
+      "subtitle": "Strategic. Independent. Visionary.",
+      "description": "As an INTJ (Architect), you're a master planner and a true problem solver. You see the world as a system to be analyzed, improved, and optimized. With sharp logical thinking and a long-term mindset, you don't just see what is you imagine what could be.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#88619A"
+    },
+    "INTP": {
+      "title": "Logician",
+      "code": "INTP-A",
+      "subtitle": "Innovative. Analytical. Curious.",
+      "description": "As an INTP (Logician), you're driven by a thirst for knowledge and understanding. You excel at finding patterns and solving complex problems with creative solutions.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#4396B4"
+    },
+    "ENTJ": {
+      "title": "Commander",
+      "code": "ENTJ-A",
+      "subtitle": "Bold. Strategic. Leadership.",
+      "description": "As an ENTJ (Commander), you're a natural-born leader with the ability to inspire and direct others toward achieving ambitious goals.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#E6AD3C"
+    },
+    "ENTP": {
+      "title": "Debater",
+      "code": "ENTP-A",
+      "subtitle": "Quick. Clever. Innovative.",
+      "description": "As an ENTP (Debater), you're intellectually curious and love exploring new ideas through debate and discussion.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#33A574"
+    },
+    "INFJ": {
+      "title": "Advocate",
+      "code": "INFJ-A",
+      "subtitle": "Insightful. Principled. Idealistic.",
+      "description": "As an INFJ (Advocate), you seek meaning and connection, driven by deeply held values and a desire to help others.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#88619A"
+    },
+    "INFP": {
+      "title": "Mediator",
+      "code": "INFP-A",
+      "subtitle": "Idealistic. Empathetic. Creative.",
+      "description": "As an INFP (Mediator), you're guided by your values and imagination, always seeking to understand yourself and help others.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#4396B4"
+    },
+    "ENFJ": {
+      "title": "Protagonist",
+      "code": "ENFJ-A",
+      "subtitle": "Charismatic. Inspiring. Altruistic.",
+      "description": "As an ENFJ (Protagonist), you're a natural motivator who inspires others to grow and reach their potential.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#E6AD3C"
+    },
+    "ENFP": {
+      "title": "Campaigner",
+      "code": "ENFP-A",
+      "subtitle": "Enthusiastic. Creative. Sociable.",
+      "description": "As an ENFP (Campaigner), you're a free spirit who sees life as full of possibilities and connections to explore.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#33A574"
+    },
+    "ISTJ": {
+      "title": "Logistician",
+      "code": "ISTJ-A",
+      "subtitle": "Practical. Fact-minded. Reliable.",
+      "description": "As an ISTJ (Logistician), you take pride in your integrity and dedication to doing what's right.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#88619A"
+    },
+    "ISFJ": {
+      "title": "Defender",
+      "code": "ISFJ-A",
+      "subtitle": "Dedicated. Warm. Protective.",
+      "description": "As an ISFJ (Defender), you're devoted to protecting and caring for the people you love.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#4396B4"
+    },
+    "ESTJ": {
+      "title": "Executive",
+      "code": "ESTJ-A",
+      "subtitle": "Organized. Traditional. Administrator.",
+      "description": "As an ESTJ (Executive), you excel at managing people and bringing order to achieve goals.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#E6AD3C"
+    },
+    "ESFJ": {
+      "title": "Consul",
+      "code": "ESFJ-A",
+      "subtitle": "Caring. Social. Popular.",
+      "description": "As an ESFJ (Consul), you're eager to help others and bring people together in harmony.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#33A574"
+    },
+    "ISTP": {
+      "title": "Virtuoso",
+      "code": "ISTP-A",
+      "subtitle": "Bold. Practical. Experimental.",
+      "description": "As an ISTP (Virtuoso), you're a master at exploring the world through your hands and your senses.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#88619A"
+    },
+    "ISFP": {
+      "title": "Adventurer",
+      "code": "ISFP-A",
+      "subtitle": "Flexible. Charming. Artistic.",
+      "description": "As an ISFP (Adventurer), you're a true artist who explores life through your aesthetics and experiences.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#4396B4"
+    },
+    "ESTP": {
+      "title": "Entrepreneur",
+      "code": "ESTP-A",
+      "subtitle": "Smart. Energetic. Perceptive.",
+      "description": "As an ESTP (Entrepreneur), you're always at the center of the action, living in the moment.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#E6AD3C"
+    },
+    "ESFP": {
+      "title": "Entertainer",
+      "code": "ESFP-A",
+      "subtitle": "Spontaneous. Energetic. Enthusiastic.",
+      "description": "As an ESFP (Entertainer), you love being the center of attention and bringing joy to others.",
+      "mascotImage": "https://api.builder.io/api/v1/image/assets/TEMP/bd94e65f52cff1258b104fbdd72f894a42e88fbc?width=520",
+      "backgroundColor": "#33A574"
+    }
+  },
+  "traitLabels": {
+    "EI": {
+      "positive": "Extroverted",
+      "negative": "Introverted",
+      "label": "Introvert",
+      "color": "#4396B4"
+    },
+    "SN": {
+      "positive": "Observant",
+      "negative": "Visioner",
+      "label": "Visioner",
+      "color": "#E6AD3C"
+    },
+    "TF": {
+      "positive": "Emotional",
+      "negative": "Rational",
+      "label": "Rational",
+      "color": "#33A574"
+    },
+    "JP": {
+      "positive": "Prospecting",
+      "negative": "Judging",
+      "label": "Judging",
+      "color": "#88619A"
+    },
+    "AT": {
+      "positive": "Turbulent",
+      "negative": "Assertive",
+      "label": "Assertive",
+      "color": "#F45E60"
+    }
+  }
+}
