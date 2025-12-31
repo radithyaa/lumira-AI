@@ -42,15 +42,17 @@ export function calculatePersonality(answers: Answer[]): PersonalityResult {
   };
 
   // Calculate scores from answers
-  answers.forEach((answer) => {
+  for (const answer of answers) {
     const question = mbtiData.questions.find((q) => q.id === answer.questionId);
     if (question) {
       const dimension = question.dimension as keyof DimensionScores;
       const score =
-        question.scoring[answer.rating.toString() as "1" | "2" | "3" | "4" | "5"];
+        question.scoring[
+          answer.rating.toString() as "1" | "2" | "3" | "4" | "5"
+        ];
       scores[dimension] += score;
     }
-  });
+  }
 
   // Determine personality type
   const type =
@@ -64,10 +66,10 @@ export function calculatePersonality(answers: Answer[]): PersonalityResult {
   // Negative score = left trait dominant, Positive = right trait dominant
   const maxScore = 10; // Maximum possible score in each direction
   const percentages = {
-    EI: Math.round(((Math.abs(scores.EI) / maxScore) * 50) + 50), // 50-100
-    SN: Math.round(((Math.abs(scores.SN) / maxScore) * 50) + 50),
-    TF: Math.round(((Math.abs(scores.TF) / maxScore) * 50) + 50),
-    JP: Math.round(((Math.abs(scores.JP) / maxScore) * 50) + 50),
+    EI: Math.round((Math.abs(scores.EI) / maxScore) * 50 + 50), // 50-100
+    SN: Math.round((Math.abs(scores.SN) / maxScore) * 50 + 50),
+    TF: Math.round((Math.abs(scores.TF) / maxScore) * 50 + 50),
+    JP: Math.round((Math.abs(scores.JP) / maxScore) * 50 + 50),
     AT: 54, // Placeholder
   };
 

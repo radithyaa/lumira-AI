@@ -25,6 +25,7 @@
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
         <data android:scheme="lumira"/>
+        <data android:scheme="exp+lumira"/>
       </intent-filter>
     </activity>
   </application>

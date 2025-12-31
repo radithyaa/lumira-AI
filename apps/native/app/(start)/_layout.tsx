@@ -24,7 +24,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="index"
+        name="home/index"
         options={{
           headerShown: false, // Ensure no header from this specific screen
           title: "Home",
@@ -34,7 +34,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="home/two"
         options={{
           headerShown: false, // Ensure no header from this specific screen
           title: "Explore",

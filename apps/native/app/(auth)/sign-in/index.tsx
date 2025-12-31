@@ -41,7 +41,7 @@ export default function SignInPage() {
 
           setEmail("");
           setPassword("");
-          router.replace("/"); // Redirect to home or dashboard
+          router.replace("/introduction"); // Redirect to home or dashboard
         },
         onFinished() {
           setIsLoading(false);

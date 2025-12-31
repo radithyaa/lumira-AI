@@ -1,5 +1,6 @@
+import { Image } from "expo-image";
 import { useRouter } from "expo-router";
-import { Image, View } from "react-native";
+import { View } from "react-native";
 import { Button } from "@/components/ui/button";
 import { Text } from "@/components/ui/text";
 

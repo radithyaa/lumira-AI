@@ -15,7 +15,7 @@ const buttonVariants = cva(
       variant: {
         default: "bg-orange",
         destructive: "bg-red-600",
-        outline: "border border-border bg-transparent",
+        outline: "border border-orange bg-transparent",
         secondary: "bg-muted",
         ghost: "bg-transparent",
         link: "bg-transparent",
@@ -41,15 +41,15 @@ const buttonVariants = cva(
 const buttonTextVariants = cva("text-center font-medium", {
   variants: {
     variant: {
-      default: "text-white",
+      default: "text-lg text-white tracking-tighter",
       destructive: "text-white",
-      outline: "text-foreground",
+      outline: "text-orange",
       secondary: "text-foreground",
       ghost: "text-foreground",
       link: "text-primary underline",
     },
     size: {
-      default: "text-[18px]",
+      default: "text-lg",
       sm: "text-sm",
       lg: "text-lg",
       icon: "text-base",
@@ -105,7 +105,7 @@ const Button = forwardRef<ComponentRef<typeof Pressable>, ButtonProps>(
             {/* DARKEN WHEN PRESSED */}
             {pressed && !disabled && (
               <View
-                className="absolute inset-0 bg-black/20"
+                className="absolute inset-0 bg-black/15"
                 pointerEvents="none"
               />
             )}

@@ -5,77 +5,83 @@
 @source "./node_modules/heroui-native/lib";
 
 :root {
-  --background: hsl(27.27, 100%, 95.69%);
-  --foreground: hsl(0 0% 98%);
+  /* Remap core theme variables to your custom colors */
+  --background: var(--cream);
+  --foreground: var(--black);
 
-  --card: hsl(0, 0%, 7.45%);
-  --card-foreground: hsl(0 0% 98%);
+  --card: hsl(0, 0%, 100%); /* White card background for light mode */
+  --card-foreground: var(--black);
 
-  --popover: hsl(0, 0%, 7.45%);
-  --popover-foreground: hsl(0 0% 98%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: var(--black);
 
-  --primary: hsl(0 0% 98%);
-  --primary-foreground: hsl(240 5.9% 10%);
+  --primary: var(--orange);
+  --primary-foreground: hsl(0 0% 98%); /* White text on orange */
 
-  --secondary: hsl(240 3.7% 15.9%);
-  --secondary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(0, 0%, 95%); /* A lighter grey for secondary elements */
+  --secondary-foreground: var(--black);
 
-  --muted: hsl(240 3.7% 15.9%);
-  --muted-foreground: hsl(240 5% 64.9%);
+  --muted: hsl(0, 0%, 90%);
+  --muted-foreground: hsl(0, 0%, 40%);
 
-  --accent: hsl(25.6, 100%, 57.25%);
-  --accent-foreground: hsl(0 0% 98%);
+  --accent: var(--orange);
+  --accent-foreground: hsl(0 0% 98%); /* White text on orange */
 
-  --destructive: hsl(0 62.8% 30.6%);
+  --destructive: hsl(0 62.8% 40.6%);
   --destructive-foreground: hsl(0 0% 98%);
 
-  --border: hsl(25.6, 100%, 57.25%);
+  --border: hsl(0, 0%, 85.1%);
   --input: hsl(0, 0%, 100%);
-  --ring: hsl(25.6, 100%, 57.25%);
+  --ring: var(--orange);
 
   --radius: 0.5rem;
 
+  /* Your custom color palette */
   --cream: hsl(33 100% 96%);
   --orange: hsl(26 100% 57%);
   --grey: hsl(0, 0%, 85.1%);
   --alternate: hsl(0, 0%, 49.41%);
   --black: hsl(0, 0%, 7.45%);
+  --white: hsl(0 0% 98%);
 }
 
 .dark {
-  --background: hsl(27.27, 100%, 95.69%);
-  --foreground: hsl(0, 0%, 7.45%);
+  /* Dark theme definitions */
+  --background: var(--black);
+  --foreground: var(--white);
 
-  --card: hsl(0, 0%, 7.45%);
-  --card-foreground: hsl(0 0% 98%);
+  --card: hsl(0, 0%, 12%); /* Dark grey for cards */
+  --card-foreground: var(--white);
 
-  --popover: hsl(0, 0%, 7.45%);
-  --popover-foreground: hsl(0 0% 98%);
+  --popover: hsl(0, 0%, 12%);
+  --popover-foreground: var(--white);
 
-  --primary: hsl(0 0% 98%);
-  --primary-foreground: hsl(240 5.9% 10%);
+  --primary: var(--orange);
+  --primary-foreground: var(--white);
 
-  --secondary: hsl(240 3.7% 15.9%);
-  --secondary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(0, 0%, 20%);
+  --secondary-foreground: var(--white);
 
-  --muted: hsl(240 3.7% 15.9%);
-  --muted-foreground: hsl(240 5% 64.9%);
+  --muted: hsl(0, 0%, 20%);
+  --muted-foreground: hsl(0, 0%, 60%);
 
-  --accent: hsl(240 3.7% 15.9%);
-  --accent-foreground: hsl(0 0% 98%);
+  --accent: var(--orange);
+  --accent-foreground: var(--white);
 
-  --destructive: hsl(0 62.8% 30.6%);
+  --destructive: hsl(0 62.8% 40.6%);
   --destructive-foreground: hsl(0 0% 98%);
 
-  --border: hsl(240 3.7% 15.9%);
-  --input: hsl(240 3.7% 15.9%);
-  --ring: hsl(240 4.9% 83.9%);
+  --border: hsl(0, 0%, 25%);
+  --input: hsl(0, 0%, 15%);
+  --ring: var(--orange);
 
+  /* Keep original definitions for reference */
   --cream: hsl(33 100% 96%);
   --orange: hsl(26 100% 57%);
   --grey: hsl(0, 0%, 85.1%);
   --alternate: hsl(0, 0%, 49.41%);
   --black: hsl(0, 0%, 7.45%);
+  --white: hsl(0 0% 98%);
 }
 
 @theme {

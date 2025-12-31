@@ -27,6 +27,9 @@
       "eas": {
         "projectId": "2d9a2740-2cc2-42c5-83e3-463c113e6816"
       }
+    },
+    "ios": {
+      "bundleIdentifier": "com.anonymous.lumira"
     }
   }
 }

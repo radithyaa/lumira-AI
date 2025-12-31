@@ -1,4 +1,5 @@
 import { Link, useRouter } from "expo-router";
+import { setItemAsync } from "expo-secure-store";
 import { Eye, EyeOff } from "lucide-react-native";
 import { useState } from "react";
 import { ActivityIndicator, Pressable, ScrollView, View } from "react-native"; // Add ScrollView and Image
@@ -19,6 +20,7 @@ export default function SignUpPage() {
   const [error, setError] = useState<string | null>(null); // Add error state
   const [confirmPassword, setConfirmPassword] = useState(""); // Add confirm password state
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [rememberMe] = useState(false); // Add remember me state
 
   async function handleSignUp() {
     setIsLoading(true);
@@ -48,11 +50,36 @@ export default function SignUpPage() {
           setError(err.error?.message || "Failed to sign up");
           setIsLoading(false);
         },
-        onSuccess() {
+        async onSuccess() {
+          await authClient.signIn.email(
+            {
+              email,
+              password,
+              rememberMe,
+            },
+            {
+              onError(err) {
+                setError(err.error?.message || "Failed to sign in");
+                setIsLoading(false);
+              },
+              onSuccess: async (session) => {
+                if (rememberMe) {
+                  await setItemAsync("auth-session", JSON.stringify(session));
+                }
+
+                setEmail("");
+                setPassword("");
+                router.replace("/introduction"); // Redirect to home or dashboard
+              },
+              onFinished() {
+                setIsLoading(false);
+              },
+            }
+          );
+
           setEmail("");
           setPassword("");
           setConfirmPassword("");
-          router.replace("/sign-in"); // Redirect to sign-in after successful sign-up
         },
         onFinished() {
           setIsLoading(false);

@@ -1,26 +1,29 @@
-import { AppThemeProvider } from "@/contexts/app-theme-context";
 import "@/global.css";
+import NetInfo from "@react-native-community/netinfo";
 import { useFonts } from "expo-font";
-import { router, Stack } from "expo-router";
-import { preventAutoHideAsync } from "expo-splash-screen"; // hideAsync will be handled by LottieSplashScreen
+import { Stack } from "expo-router";
+import { hideAsync, preventAutoHideAsync } from "expo-splash-screen";
 import { HeroUINativeProvider } from "heroui-native";
-import { useCallback, useEffect, useState } from "react"; // Added useCallback, useState
+import { useCallback, useEffect, useState } from "react";
+import { AppState, Platform } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { KeyboardProvider } from "react-native-keyboard-controller";
-import { LottieSplashScreen } from "@/components/lottie-splash-screen"; // Import LottieSplashScreen
-import { isFirstLaunch, markLaunched } from "@/lib/first-launch";
+import { LottieSplashScreen } from "@/components/lottie-splash-screen";
+import { AppThemeProvider } from "@/contexts/app-theme-context";
+import { sync } from "@/lib/db/sync";
+import { isFirstLaunch } from "@/lib/first-launch";
 
 preventAutoHideAsync();
 
 export const unstable_settings = {
-  initialRouteName: "(drawer)", // Initial route for authenticated users
+  initialRouteName: "onboarding/index",
 };
 
 function StackLayout() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="(auth)" />
-      <Stack.Screen name="(drawer)" />
+      <Stack.Screen name="(start)" />
       <Stack.Screen
         name="modal"
         options={{ presentation: "modal", title: "Modal" }}
@@ -30,31 +33,7 @@ function StackLayout() {
 }
 
 export default function Layout() {
-  const [appIsReady, setAppIsReady] = useState(false); // New state for app readiness
-  const [firstLaunch, setFirstLaunch] = useState(true);
-
-  useEffect(() => {
-    (async () => {
-      const first = await isFirstLaunch();
-      setFirstLaunch(first);
-      if (first) {
-        await markLaunched();
-      }
-      setAppIsReady(true);
-    })();
-  }, []);
-
-  if (!appIsReady) {
-    return null;
-  }
-
-  if (firstLaunch) {
-    router.replace("/onboarding");
-  } else {
-    router.replace("/");
-  }
-
-  const [loaded, error] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
     "Poppins-Bold": require("../assets/fonts/Poppins-Bold.ttf"),
     "Poppins-Light": require("../assets/fonts/Poppins-Light.ttf"),
     "Poppins-Medium": require("../assets/fonts/Poppins-Medium.ttf"),
@@ -62,22 +41,97 @@ export default function Layout() {
     "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
   });
 
-  const onLottieAnimationFinish = useCallback(() => {
-    if (loaded || error) {
-      setAppIsReady(true);
-    }
-  }, [loaded, error]);
+  const [appReady, setAppReady] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
 
-  if (!appIsReady) {
-    return <LottieSplashScreen onAnimationFinish={onLottieAnimationFinish} />;
+  useEffect(() => {
+    (async () => {
+      try {
+        const first = await isFirstLaunch();
+        console.log("first launch:", first);
+      } catch (e) {
+        console.error("first launch error", e);
+      } finally {
+        setAppReady(true);
+      }
+    })();
+  }, []);
+
+  useEffect(() => {
+    if (fontsLoaded || fontError) {
+      hideAsync();
+    }
+  }, [fontsLoaded, fontError]);
+
+  // Automatic Synchronization Logic
+  useEffect(() => {
+    if (!process.env.EXPO_PUBLIC_SERVER_URL && Platform.OS !== "web") {
+      console.warn("EXPO_PUBLIC_SERVER_URL is not set. Sync will not work.");
+    }
+
+    const handleSync = () => {
+      NetInfo.fetch().then((state) => {
+        if (state.isConnected) {
+          console.log(
+            "Attempting to sync due to app state change or network recovery..."
+          );
+          sync();
+        } else {
+          console.log("Skipping sync, app is offline.");
+        }
+      });
+    };
+
+    const appStateSubscription = AppState.addEventListener(
+      "change",
+      (nextAppState) => {
+        if (nextAppState === "active") {
+          handleSync();
+        }
+      }
+    );
+
+    handleSync();
+
+    return () => {
+      appStateSubscription.remove();
+    };
+  }, []);
+
+  const onLottieFinish = useCallback(() => {
+    setShowSplash(false);
+  }, []);
+
+  if (!(fontsLoaded || fontError)) {
+    return null;
+  }
+
+  if (showSplash || !appReady) {
+    return <LottieSplashScreen onAnimationFinish={onLottieFinish} />;
   }
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <KeyboardProvider>
         <AppThemeProvider>
-          <HeroUINativeProvider>
+          <HeroUINativeProvider
+            config={{
+              toast: {
+                defaultProps: {
+                  variant: "accent",
+                  placement: "top",
+                },
+                insets: {
+                  top: 50,
+                  bottom: 20,
+                  left: 16,
+                  right: 16,
+                },
+              },
+            }}
+          >
             <StackLayout />
+            {/* The Toaster is now implicitly part of the Provider */}
           </HeroUINativeProvider>
         </AppThemeProvider>
       </KeyboardProvider>
