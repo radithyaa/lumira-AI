@@ -22,7 +22,7 @@ import {
   calculatePersonality,
   getPersonalityData,
   type PersonalityResult,
-} from "@/app/(start)/mbti/_lib/mbti-utils";
+} from "./_lib/mbti-utils";
 
 const StyledView = withUniwind(View);
 const StyledText = withUniwind(Text);
@@ -78,7 +78,7 @@ function TraitBar({ trait, index }: TraitBarProps) {
       entering={FadeIn.delay(index * 150).duration(400)}
     >
       {/* Percentage Label */}
-      <StyledText className="mb-2 text-center font-normal text-[#131313] text-[16px] tracking-[-0.5px]">
+      <StyledText className="mb-2 text-center font-normal text-[16px] text-black tracking-[-0.5px]">
         <Text>{trait.percentage}%</Text> {trait.label}
       </StyledText>
 
@@ -161,7 +161,7 @@ export default function MBTIResult() {
   if (!result) {
     return (
       <StyledView className="flex-1 items-center justify-center bg-[#FFF3E9]">
-        <StyledText className="font-medium text-[#131313] text-[18px]">
+        <StyledText className="font-medium text-[18px] text-black">
           Loading...
         </StyledText>
       </StyledView>
@@ -209,16 +209,16 @@ export default function MBTIResult() {
 
           {/* Description */}
           <StyledView className="mb-6 w-full">
-            <StyledText className="mb-2 font-medium text-[#131313] text-[18px] tracking-[-0.5px]">
+            <StyledText className="mb-2 font-medium text-[18px] text-black tracking-[-0.5px]">
               {personalityData.subtitle}
             </StyledText>
-            <StyledText className="font-normal text-[#131313] text-[16px] leading-6 tracking-[-0.5px]">
+            <StyledText className="font-normal text-[16px] text-black leading-6 tracking-[-0.5px]">
               {personalityData.description}
             </StyledText>
           </StyledView>
 
           {/* Personality Traits Header */}
-          <StyledText className="mb-6 self-start font-medium text-[#131313] text-[18px] tracking-[-0.5px]">
+          <StyledText className="mb-6 self-start font-medium text-[18px] text-black tracking-[-0.5px]">
             Personality Traits
           </StyledText>
 

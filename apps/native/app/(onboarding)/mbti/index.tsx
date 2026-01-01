@@ -88,7 +88,7 @@ function QuestionCard({
       style={blurStyle}
     >
       <StyledView className="flex-col items-center gap-4">
-        <StyledText className="text-center font-medium text-[#131313] text-[18px] tracking-[-0.5px]">
+        <StyledText className="text-center font-medium text-[18px] text-black tracking-[-0.5px]">
           {question.text}
         </StyledText>
 
@@ -189,7 +189,7 @@ export default function MBTITest() {
         {/* Header Section */}
         <StyledView className="mb-6 px-5">
           {/* Title */}
-          <StyledText className="mb-3 text-nowrap text-center font-medium text-[#131313] text-[24px] tracking-[-0.5px]">
+          <StyledText className="mb-3 text-nowrap text-center font-medium text-[24px] text-black tracking-[-0.5px]">
             <Text className="text-nowrap" style={{ color: "#FF8225" }}>
               {section.title}
             </Text>

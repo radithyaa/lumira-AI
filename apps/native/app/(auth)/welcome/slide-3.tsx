@@ -33,11 +33,11 @@ export default function OnboardingThird() {
 
       {/* Content Section */}
       <StyledView className="absolute top-[454px] w-full items-center self-center px-[22px]">
-        <StyledText className="text-center font-medium text-[#131313] text-[26px] tracking-tighter">
+        <StyledText className="text-center font-medium text-[26px] text-black tracking-tighter">
           Track Your Growth
         </StyledText>
 
-        <StyledText className="mt-[12px] w-[359px] text-center font-normal text-[#131313] text-[16px] tracking-tighter">
+        <StyledText className="mt-[12px] w-[359px] text-center font-normal text-[16px] text-black tracking-tighter">
           Track your goals, explore career maps, and grow with a study planner
           that adapts to you.
         </StyledText>

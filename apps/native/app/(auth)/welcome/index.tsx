@@ -171,11 +171,11 @@ export default function OnboardingFirst() {
 
       {/* Content Section */}
       <StyledView className="mt-[27px] items-center px-[22px]">
-        <StyledText className="text-center font-medium text-[#131313] text-[26px] tracking-tighter">
+        <StyledText className="text-center font-medium text-[26px] text-black tracking-tighter">
           Focus Made Simple
         </StyledText>
 
-        <StyledText className="mt-[6px] w-[359px] text-center font-normal text-[#131313] text-[16px] tracking-tighter">
+        <StyledText className="mt-[6px] w-[359px] text-center font-normal text-[16px] text-black tracking-tighter">
           Use Pomodoro sessions to build focus, stay consistent, and finish
           tasks with clarity.
         </StyledText>

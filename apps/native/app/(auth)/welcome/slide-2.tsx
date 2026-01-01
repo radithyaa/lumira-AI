@@ -30,11 +30,11 @@ export default function OnboardingSecond() {
 
       {/* Content Section */}
       <StyledView className="absolute top-[474px] w-full items-center self-center px-[22px]">
-        <StyledText className="text-center font-medium text-[#131313] text-[26px] tracking-tighter">
+        <StyledText className="text-center font-medium text-[26px] text-black tracking-tighter">
           Plan Your Future
         </StyledText>
 
-        <StyledText className="mt-[12px] w-[359px] text-center font-normal text-[#131313] text-[16px] tracking-tighter">
+        <StyledText className="mt-[12px] w-[359px] text-center font-normal text-[16px] text-black tracking-tighter">
           Get personalized recommendations based on your MBTI, grades,
           interests, and dream job—powered by AI.
         </StyledText>
