@@ -9,7 +9,7 @@ import Animated, {
 } from "react-native-reanimated";
 import Svg, { Path } from "react-native-svg";
 import { withUniwind } from "uniwind";
-import type { Answer } from "@/app/(start)/mbti/_lib/mbti-utils";
+import type { Answer } from "@/app/(onboarding)/mbti/_lib/mbti-utils";
 import mbtiData from "./_lib/mbti-data.json";
 
 const StyledView = withUniwind(View);

@@ -9,6 +9,7 @@ import {
   View,
 } from "react-native";
 import { BarChart } from "react-native-chart-kit";
+import type { AbstractChartConfig } from "react-native-chart-kit/dist/AbstractChart";
 import { Icon } from "@/components/ui/icon";
 
 const screenWidth = Dimensions.get("window").width;
@@ -82,12 +83,11 @@ export default function ReportPage() {
 
   const currentData = CHART_DATA[duration];
 
-  const chartConfig = {
+  const chartConfig: AbstractChartConfig = {
     backgroundColor: "#ffffff",
     backgroundGradientFrom: "#ffffff",
     backgroundGradientTo: "#ffffff",
     decimalPlaces: 0,
-    color: (opacity = 1) => `rgba(255, 130, 37, ${opacity})`,
     labelColor: (opacity = 1) => `rgba(126, 126, 126, ${opacity})`,
     style: {
       borderRadius: 16,
@@ -95,15 +95,16 @@ export default function ReportPage() {
     propsForBackgroundLines: {
       strokeDasharray: "",
       stroke: "#E5E5E5",
-      strokeWidth: 1,
+      strokeWidth: 0,
     },
-    fillShadowGradient: "#FFD5A8",
     fillShadowGradientOpacity: 1,
+    fillShadowGradientToOpacity: 1,
+    color: (opacity = 1) => `rgba(255, 130, 37, ${opacity})`,
   };
 
   return (
     <ScrollView className="flex-1 bg-[#FFF3E9]">
-      <View className="px-5 pt-14 pb-6">
+      <View className="px-5 pt-14 pb-28">
         {/* Header */}
         <View className="relative mb-6 flex-row items-center justify-center">
           <TouchableOpacity
@@ -116,7 +117,7 @@ export default function ReportPage() {
         </View>
 
         {/* Focus Time Chart */}
-        <View className="mb-6 rounded-2xl bg-white p-4">
+        <View className="mb-6 overflow-hidden rounded-2xl bg-white p-4">
           <View className="mb-4 flex-row items-center justify-between">
             <Text className="font-medium text-black text-lg">Focus Time</Text>
             <TouchableOpacity
@@ -156,7 +157,7 @@ export default function ReportPage() {
           )}
 
           {/* Stats */}
-          <View className="mb-4 flex-row justify-between">
+          <View className="mb-4 flex-row justify-between overflow-x-hidden">
             <View className="items-center">
               <Text className="mb-1 font-normal text-[#7E7E7E] text-sm">
                 Focus Time
@@ -189,15 +190,20 @@ export default function ReportPage() {
           <BarChart
             chartConfig={chartConfig}
             data={currentData}
+            flatColor={true}
             fromZero
             height={220}
             showValuesOnTopOfBars={false}
             style={{
               marginVertical: 8,
               borderRadius: 16,
+              marginLeft: -45,
+              justifyContent: "center",
+              display: "flex",
             }}
-            width={screenWidth - 72}
+            width={screenWidth - 30}
             yAxisSuffix="h"
+            yLabelsOffset={0}
           />
         </View>
 

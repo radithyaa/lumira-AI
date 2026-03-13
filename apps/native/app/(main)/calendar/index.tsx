@@ -130,12 +130,12 @@ export default function ActivityPage() {
       const isSelected = isDateSelected(day);
       days.push(
         <TouchableOpacity
-          className="h-10 w-10 items-center justify-center"
+          className="h-10 w-10 items-center justify-center space-x-2"
           key={`current-${day}`}
           onPress={() => handleDatePress(day, true)}
         >
           <View
-            className={`h-10 w-10 items-center justify-center rounded-full border border-[#FF8225] ${
+            className={`h-10 w-10 items-center justify-center gap-2 rounded-full border border-[#FF8225] ${
               isSelected ? "bg-[#FF8225]" : ""
             }`}
           >

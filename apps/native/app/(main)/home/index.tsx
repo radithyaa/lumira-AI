@@ -1,6 +1,11 @@
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
-import { ChevronRight, Clock, PlayCircle } from "lucide-react-native";
+import {
+  ChevronRight,
+  Clock,
+  FileVideoCamera,
+  Play,
+} from "lucide-react-native";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Icon } from "@/components/ui/icon";
 import { authClient } from "@/lib/auth-client";
@@ -21,22 +26,22 @@ const RECENT_TASKS = [
     id: 1,
     title: "Visual Effects",
     progress: "5/6 - 0/150 mins",
-    color: "#FFB771",
-    icon: "🎬",
+    color: "#FF7900",
+    icon: <FileVideoCamera color={"white"} />,
   },
   {
     id: 2,
     title: "Wireframing",
     progress: "2/6 - 0/100 mins",
     color: "#9CA6FF",
-    icon: "🎨",
+    icon: <FileVideoCamera color={"white"} />,
   },
   {
     id: 3,
     title: "Layouting",
     progress: "2/6 - 0/200 mins",
     color: "#C63B08",
-    icon: "💻",
+    icon: <FileVideoCamera color={"white"} />,
   },
 ];
 
@@ -60,72 +65,89 @@ export default function HomePage() {
               Sunday, 20th July 2025
             </Text>
           </View>
-          <View className="h-14 w-14 items-center justify-center rounded-full bg-white shadow-sm">
-            <Text className="text-2xl">🦊</Text>
+          <View className="h-14 w-14 items-center justify-center rounded-full border border-muted/30 bg-white">
+            <Image
+              source={require("@/assets/mascot/holdinglips-lira.webp")}
+              style={{
+                width: 40,
+                height: 40,
+              }}
+            />
           </View>
         </View>
 
         {/* Week Calendar */}
-        <View className="mb-6 rounded-2xl bg-white p-4 shadow-sm">
-          <View className="flex-row justify-between">
-            {CURRENT_WEEK.map((day, index) => (
-              <View className="items-center" key={index}>
-                <Text className="mb-1.5 font-medium text-base text-black tracking-tighter">
-                  {day.day}
-                </Text>
-                <View
-                  className={`rounded-xl px-2 py-1 ${
-                    day.isToday ? "bg-[#FF8225]" : ""
-                  }`}
-                >
-                  <Text
-                    className={`text-nowrap text-center text-base tracking-tighter ${
-                      day.isToday ? "text-white" : "text-black"
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={() => router.push("/(main)/calendar")}
+        >
+          <View className="mb-6 rounded-2xl border border-muted/30 bg-white p-4">
+            <View className="flex-row justify-between">
+              {CURRENT_WEEK.map((day, index) => (
+                <View className="items-center" key={index}>
+                  <Text className="mb-1.5 font-medium text-base text-black tracking-tighter">
+                    {day.day}
+                  </Text>
+                  <View
+                    className={`rounded-xl px-2 py-1 ${
+                      day.isToday ? "bg-[#FF8225]" : ""
                     }`}
                   >
-                    {day.date}
-                  </Text>
+                    <Text
+                      className={`text-nowrap text-center text-base tracking-tighter ${
+                        day.isToday ? "text-white" : "text-black"
+                      }`}
+                    >
+                      {day.date}
+                    </Text>
+                  </View>
                 </View>
-              </View>
-            ))}
+              ))}
+            </View>
           </View>
-        </View>
+        </TouchableOpacity>
 
         {/* Navigation Cards */}
         <View className="mb-6 flex-row gap-4">
           <TouchableOpacity
-            className="flex h-40 flex-1 items-center justify-center rounded-2xl bg-[#FFB771]"
-            onPress={() => router.push("/(main)/activity")}
+            activeOpacity={0.7}
+            className="h-40 flex-1 items-center justify-center rounded-2xl bg-orange-300"
+            onPress={() => router.push("/(main)/calendar")}
           >
             <Image
               source={require("@/assets/mascot/holdinglips-lira.webp")}
               style={{
                 width: 90,
                 height: 90,
-                marginTop: -55,
-                marginLeft: -10,
               }}
             />
             <Text className="font-medium text-lg text-white">Tasks</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
+            activeOpacity={0.7}
             className="h-40 flex-1 items-center justify-center rounded-2xl bg-[#9CA6FF]"
-            onPress={() => router.push("/(main)/report/index")}
+            onPress={() => router.push("/(main)/report")}
           >
-            <Text className="mb-2 text-6xl">📊</Text>
+            <Image
+              source={require("@/assets/mascot/happy-lira.webp")}
+              style={{
+                width: 90,
+                height: 90,
+              }}
+            />
             <Text className="font-medium text-lg text-white">Report</Text>
           </TouchableOpacity>
         </View>
 
         {/* Career Compass Card */}
-        <View className="mb-6 h-46 w-90 flex-col rounded-2xl bg-[#FF7900] py-4">
+        <View className="mb-6 h-46 w-full flex-col rounded-2xl bg-[#FF7900] py-4">
           <View className="flex-row">
             <Image
               source={require("@/assets/mascot/smile-lira.webp")}
               style={{
-                width: 172,
-                height: 172,
+                width: 160,
+                height: 160,
                 marginTop: -55,
                 marginLeft: -10,
               }}
@@ -161,14 +183,14 @@ export default function HomePage() {
 
           {RECENT_TASKS.map((task) => (
             <View
-              className="mb-3 flex-row items-center rounded-2xl bg-white p-4 shadow-sm"
+              className="mb-3 flex-row items-center rounded-2xl border border-muted/30 bg-white p-4"
               key={task.id}
             >
               <View
                 className="h-12 w-12 items-center justify-center rounded-full"
                 style={{ backgroundColor: task.color }}
               >
-                <Text className="text-2xl">{task.icon}</Text>
+                <Text className="text-2xl text-white">{task.icon}</Text>
               </View>
               <View className="ml-4 flex-1">
                 <Text className="font-medium text-black text-sm">
@@ -182,7 +204,7 @@ export default function HomePage() {
                 </View>
               </View>
               <View className="h-9 w-9 items-center justify-center rounded-full bg-[#FFD5A8]">
-                <Icon as={PlayCircle} color={task.color} size={20} />
+                <Play color={task.color} size={20} />
               </View>
             </View>
           ))}

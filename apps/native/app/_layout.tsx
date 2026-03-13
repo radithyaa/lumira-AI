@@ -23,7 +23,7 @@ function StackLayout() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="(auth)" />
-      <Stack.Screen name="(start)" />
+      <Stack.Screen name="(onboarding)" />
       <Stack.Screen
         name="modal"
         options={{ presentation: "modal", title: "Modal" }}

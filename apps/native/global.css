@@ -5,152 +5,157 @@
 @source "./node_modules/heroui-native/lib";
 
 :root {
-  /* Remap core theme variables to your custom colors */
-  --background: var(--cream);
-  --foreground: var(--black);
+    /* Remap core theme variables to your custom colors */
+    --background: var(--cream);
+    --foreground: var(--black);
 
-  --card: hsl(0, 0%, 100%); /* White card background for light mode */
-  --card-foreground: var(--black);
+    --card: hsl(0, 0%, 100%);
+    /* White card background for light mode */
+    --card-foreground: var(--black);
 
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: var(--black);
+    --popover: hsl(0, 0%, 100%);
+    --popover-foreground: var(--black);
 
-  --primary: var(--orange);
-  --primary-foreground: hsl(0 0% 98%); /* White text on orange */
+    --primary: var(--orange);
+    --primary-foreground: hsl(0 0% 98%);
+    /* White text on orange */
 
-  --secondary: hsl(0, 0%, 95%); /* A lighter grey for secondary elements */
-  --secondary-foreground: var(--black);
+    --secondary: hsl(0, 0%, 95%);
+    /* A lighter grey for secondary elements */
+    --secondary-foreground: var(--black);
 
-  --muted: hsl(0, 0%, 90%);
-  --muted-foreground: hsl(0, 0%, 40%);
+    --muted: hsl(0, 0%, 90%);
+    --muted-foreground: hsl(0, 0%, 40%);
 
-  --accent: var(--orange);
-  --accent-foreground: hsl(0 0% 98%); /* White text on orange */
+    --accent: var(--orange);
+    --accent-foreground: hsl(0 0% 98%);
+    /* White text on orange */
 
-  --destructive: hsl(0 62.8% 40.6%);
-  --destructive-foreground: hsl(0 0% 98%);
+    --destructive: hsl(0 62.8% 40.6%);
+    --destructive-foreground: hsl(0 0% 98%);
 
-  --border: hsl(0, 0%, 85.1%);
-  --input: hsl(0, 0%, 100%);
-  --ring: var(--orange);
+    --border: hsl(0, 0%, 85.1%);
+    --input: hsl(0, 0%, 100%);
+    --ring: var(--orange);
 
-  --radius: 0.5rem;
+    --radius: 0.5rem;
 
-  /* Your custom color palette */
-  --cream: hsl(33 100% 96%);
-  --orange: hsl(26 100% 57%);
-  --grey: hsl(0, 0%, 85.1%);
-  --alternate: hsl(0, 0%, 49.41%);
-  --black: hsl(0, 0%, 7.45%);
-  --white: hsl(0 0% 98%);
+    /* Your custom color palette */
+    --cream: hsl(33 100% 96%);
+    --orange: hsl(26 100% 57%);
+    --grey: hsl(0, 0%, 85.1%);
+    --alternate: hsl(0, 0%, 49.41%);
+    --black: hsl(0, 0%, 7.45%);
+    --white: hsl(0 0% 100%);
 }
 
 .dark {
-  /* Dark theme definitions */
-  --background: var(--black);
-  --foreground: var(--white);
+    /* Dark theme definitions */
+    --background: var(--black);
+    --foreground: var(--white);
 
-  --card: hsl(0, 0%, 12%); /* Dark grey for cards */
-  --card-foreground: var(--white);
+    --card: hsl(0, 0%, 12%);
+    /* Dark grey for cards */
+    --card-foreground: var(--white);
 
-  --popover: hsl(0, 0%, 12%);
-  --popover-foreground: var(--white);
+    --popover: hsl(0, 0%, 12%);
+    --popover-foreground: var(--white);
 
-  --primary: var(--orange);
-  --primary-foreground: var(--white);
+    --primary: var(--orange);
+    --primary-foreground: var(--white);
 
-  --secondary: hsl(0, 0%, 20%);
-  --secondary-foreground: var(--white);
+    --secondary: hsl(0, 0%, 20%);
+    --secondary-foreground: var(--white);
 
-  --muted: hsl(0, 0%, 20%);
-  --muted-foreground: hsl(0, 0%, 60%);
+    --muted: hsl(0, 0%, 20%);
+    --muted-foreground: hsl(0, 0%, 60%);
 
-  --accent: var(--orange);
-  --accent-foreground: var(--white);
+    --accent: var(--orange);
+    --accent-foreground: var(--white);
 
-  --destructive: hsl(0 62.8% 40.6%);
-  --destructive-foreground: hsl(0 0% 98%);
+    --destructive: hsl(0 62.8% 40.6%);
+    --destructive-foreground: hsl(0 0% 98%);
 
-  --border: hsl(0, 0%, 25%);
-  --input: hsl(0, 0%, 15%);
-  --ring: var(--orange);
+    --border: hsl(0, 0%, 25%);
+    --input: hsl(0, 0%, 15%);
+    --ring: var(--orange);
 
-  /* Keep original definitions for reference */
-  --cream: hsl(33 100% 96%);
-  --orange: hsl(26 100% 57%);
-  --grey: hsl(0, 0%, 85.1%);
-  --alternate: hsl(0, 0%, 49.41%);
-  --black: hsl(0, 0%, 7.45%);
-  --white: hsl(0 0% 98%);
+    /* Keep original definitions for reference */
+    --cream: hsl(33 100% 96%);
+    --orange: hsl(26 100% 57%);
+    --grey: hsl(0, 0%, 85.1%);
+    --alternate: hsl(0, 0%, 49.41%);
+    --black: hsl(0, 0%, 7.45%);
+    --white: hsl(0 0% 98%);
 }
 
 @theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
 
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
 
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
 
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
 
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
 
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
 
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
 
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
 
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
 
-  --color-cream: var(--cream);
-  --color-orange: var(--orange);
-  --color-grey: var(--grey);
-  --color-alternate: var(--alternate);
-  --color-black: var(--black);
-  --color-white: var(--white);
+    --color-cream: var(--cream);
+    --color-orange: var(--orange);
+    --color-grey: var(--grey);
+    --color-alternate: var(--alternate);
+    --color-black: var(--black);
+    --color-white: var(--white);
 
-  --radius-lg: var(--radius);
+    --radius-lg: var(--radius);
 
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
 
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
 
-  --font-normal: "Poppins-Regular";
-  --font-bold: "Poppins-Bold";
-  --font-medium: "Poppins-Medium";
-  --font-light: "Poppins-Light";
-  --font-semibold: "Poppins-SemiBold";
+    --font-normal: "Poppins-Regular";
+    --font-bold: "Poppins-Bold";
+    --font-medium: "Poppins-Medium";
+    --font-light: "Poppins-Light";
+    --font-semibold: "Poppins-SemiBold";
 
-  @keyframes accordion-down {
-    from {
-      height: 0;
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+
+        to {
+            height: var(--radix-accordion-content-height);
+        }
     }
 
-    to {
-      height: var(--radix-accordion-content-height);
-    }
-  }
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
 
-  @keyframes accordion-up {
-    from {
-      height: var(--radix-accordion-content-height);
+        to {
+            height: 0;
+        }
     }
-
-    to {
-      height: 0;
-    }
-  }
 }
