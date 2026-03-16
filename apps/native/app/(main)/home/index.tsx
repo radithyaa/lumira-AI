@@ -9,6 +9,7 @@ import {
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { Icon } from "@/components/ui/icon";
 import { authClient } from "@/lib/auth-client";
+import { format } from 'date-fns';
 
 const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const CURRENT_WEEK = [
@@ -48,6 +49,8 @@ const RECENT_TASKS = [
 export default function HomePage() {
   const router = useRouter();
   const { data: session } = authClient.useSession();
+  const today = format(new Date(), "eeee, do MMMM yyyy");
+
 
   return (
     <ScrollView className="flex-1 bg-[#FFF3E9]">
@@ -62,7 +65,7 @@ export default function HomePage() {
               </Text>
             </Text>
             <Text className="mt-1 font-normal text-alternate text-lg tracking-tighter">
-              Sunday, 20th July 2025
+              { today }
             </Text>
           </View>
           <View className="h-14 w-14 items-center justify-center rounded-full border border-muted/30 bg-white">
