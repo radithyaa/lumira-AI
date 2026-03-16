@@ -235,6 +235,9 @@ export default function MainLayout() {
       <Tabs.Screen name="home/index" />
       <Tabs.Screen name="report/index" />
       <Tabs.Screen name="calendar/index" />
+      <Tabs.Screen name="task/index" options={{ href: null }} />
+      <Tabs.Screen name="task/create/index" options={{ href: null }} />
+      <Tabs.Screen name="task/create-project/index" options={{ href: null }} />
     </Tabs>
   );
 }
