@@ -1,5 +1,7 @@
 # 🌟 Lumira
 
+<img width="2427" height="1365" alt="Thumbnail (1)" src="https://github.com/user-attachments/assets/844af3a7-d841-460d-be15-81bae28608c8" />
+
 **Lumira** adalah aplikasi asisten pertumbuhan pribadi cerdas yang dirancang untuk membantu Anda memahami diri sendiri lebih dalam dan mencapai potensi maksimal Anda. Dengan pendekatan berbasis kepribadian (MBTI) dan manajemen tujuan, Lumira menjadi teman setia dalam perjalanan pengembangan diri Anda.
 
 Aplikasi ini dibangun dengan arsitektur **Offline-First**, memastikan Anda tetap produktif dan dapat mengakses data penting kapan saja, di mana saja, bahkan tanpa koneksi internet.
