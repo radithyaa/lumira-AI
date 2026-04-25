@@ -1,76 +1,102 @@
-# lumira
+# 🌟 Lumira
 
-This project was created with [Better-T-Stack](https://github.com/AmanVarshney01/create-better-t-stack), a modern TypeScript stack that combines Hono, and more.
+**Lumira** adalah aplikasi asisten pertumbuhan pribadi cerdas yang dirancang untuk membantu Anda memahami diri sendiri lebih dalam dan mencapai potensi maksimal Anda. Dengan pendekatan berbasis kepribadian (MBTI) dan manajemen tujuan, Lumira menjadi teman setia dalam perjalanan pengembangan diri Anda.
 
-## Features
+Aplikasi ini dibangun dengan arsitektur **Offline-First**, memastikan Anda tetap produktif dan dapat mengakses data penting kapan saja, di mana saja, bahkan tanpa koneksi internet.
 
-- **TypeScript** - For type safety and improved developer experience
-- **React Native** - Build mobile apps using React
-- **Expo** - Tools for React Native development
-- **Uniwind** - Utility-first CSS for native rapid UI development
-- **ReusableRN/ui** - Reusable UI components
-- **Hono** - Lightweight, performant server framework
-- **Bun** - Runtime environment
-- **Drizzle** - TypeScript-first ORM
-- **PostgreSQL** - Database engine
-- **Authentication** - Better-Auth
-- **Turborepo** - Optimized monorepo build system
+---
 
-## Getting Started
+## 🚀 Tech Stack
 
-First, install the dependencies:
+Lumira menggunakan teknologi modern yang berfokus pada kecepatan pengembangan dan performa maksimal:
 
+### Core Architecture
+- **Monorepo:** [Turborepo](https://turbo.build/) untuk manajemen workspace yang efisien.
+- **Runtime:** [Bun](https://bun.sh/) untuk eksekusi JavaScript yang sangat cepat.
+
+### Mobile (Client)
+- **Framework:** [Expo](https://expo.dev/) / React Native.
+- **Local Database:** [WatermelonDB](https://nozbe.github.io/WatermelonDB/) (Sistem sinkronisasi offline-first yang sangat responsif).
+- **Styling:** [NativeWind](https://www.nativewind.dev/) (Tailwind CSS untuk Native).
+- **Form Management:** [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/).
+
+### Backend (Server)
+- **Framework:** [Hono](https://hono.dev/) (Framework web minimalis dan cepat).
+- **ORM:** [Drizzle ORM](https://orm.drizzle.team/) (TypeScript-first ORM).
+- **Database:** [PostgreSQL](https://www.postgresql.org/).
+- **Authentication:** [Better-Auth](https://better-auth.com/) (Sistem autentikasi modern dan aman).
+
+---
+
+## 🛠️ Persiapan Pengembangan
+
+Ikuti langkah-langkah berikut untuk menjalankan proyek di lingkungan lokal Anda:
+
+### 1. Prasyarat
+- Pastikan Anda sudah menginstal **Bun** (`curl -fsSL https://bun.sh/install | bash`).
+- Pastikan Anda memiliki instance **PostgreSQL** yang berjalan.
+
+### 2. Instalasi Dependensi
+Jalankan perintah berikut di root direktori:
 ```bash
 bun install
 ```
-## Database Setup
 
-This project uses PostgreSQL with Drizzle ORM.
+### 3. Konfigurasi Environment
+Buat file `.env` di direktori berikut berdasarkan contoh yang ada:
 
-1. Make sure you have a PostgreSQL database set up.
-2. Update your `apps/server/.env` file with your PostgreSQL connection details.
+- **`apps/server/.env`**: Isi dengan kredensial database dan rahasia autentikasi.
+- **`apps/native/.env`**: (Jika diperlukan) untuk konfigurasi API URL.
 
-3. Apply the schema to your database:
+### 4. Setup Database
+Dorong skema database ke PostgreSQL Anda:
 ```bash
 bun run db:push
 ```
 
+---
 
-Then, run the development server:
+## 🏃 Menjalankan Aplikasi
+
+Anda dapat menjalankan seluruh sistem (Server + Mobile) dengan satu perintah:
 
 ```bash
 bun run dev
 ```
 
-Use the Expo Go app to run the mobile application.
-The API is running at [http://localhost:3000](http://localhost:3000).
+Atau jalankan secara terpisah:
 
+- **Server saja:** `bun run dev:server` (Berjalan di `http://localhost:3000`)
+- **Mobile saja:** `bun run dev:native`
 
+> **Catatan:** Untuk menjalankan aplikasi mobile, gunakan aplikasi **Expo Go** di ponsel Anda atau jalankan emulator Android/iOS.
 
+---
 
+## 📂 Struktur Proyek
 
-
-
-## Project Structure
-
-```
+```text
 lumira/
 ├── apps/
-│   ├── native/      # Mobile application (React Native, Expo)
+│   ├── native/      # Aplikasi Mobile (Expo/React Native)
 │   └── server/      # Backend API (Hono)
 ├── packages/
-│   ├── api/         # API layer / business logic
-│   ├── auth/        # Authentication configuration & logic
-│   └── db/          # Database schema & queries
+│   ├── auth/        # Konfigurasi & Logika Better-Auth
+│   ├── config/      # Shared configuration (TSConfig, dll)
+│   └── db/          # Skema Drizzle & Migrasi Database
+└── README.md
 ```
 
-## Available Scripts
+---
 
-- `bun run dev`: Start all applications in development mode
-- `bun run build`: Build all applications
-- `bun run dev:web`: Start only the web application
-- `bun run dev:server`: Start only the server
-- `bun run check-types`: Check TypeScript types across all apps
-- `bun run dev:native`: Start the React Native/Expo development server
-- `bun run db:push`: Push schema changes to database
-- `bun run db:studio`: Open database studio UI
+## ✨ Fitur Utama (Sedang Dikembangkan)
+
+- [x] **Offline-First Sync:** Data tersimpan secara lokal dan otomatis sinkron saat online.
+- [x] **Smart Forms:** Validasi formulir yang ketat dengan Zod dan React Hook Form.
+- [x] **Modern Auth:** Login aman dengan berbagai provider.
+- [ ] **MBTI Integration:** Personalisasi pengalaman berdasarkan tipe kepribadian.
+- [ ] **Progress Tracking:** Visualisasi pencapaian tujuan pengguna.
+
+---
+
+Dibuat dengan ❤️ untuk masa depan yang lebih terorganisir.
